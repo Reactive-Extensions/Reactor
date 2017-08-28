@@ -1,6 +1,11 @@
 image: Visual Studio 2017
 
 build_script:
-  - ps: dotnet build
-  - ps: dotnet test Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests\Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests.csproj
-  - ps: dotnet test Microsoft.Reactive.Bcl.Memory.Pooling.Tests\Microsoft.Reactive.Bcl.Memory.Pooling.Tests.csproj
+  - cmd: dotnet build -c Release /p:PackageOutputPath=%APPVEYOR_BUILD_FOLDER%
+  - cmd: dotnet test -c Release Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests\Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests.csproj
+  - cmd: dotnet test -c Release Microsoft.Reactive.Bcl.Memory.Pooling.Tests\Microsoft.Reactive.Bcl.Memory.Pooling.Tests.csproj
+
+test: off
+
+artifacts:
+  - path: '*.nupkg'
