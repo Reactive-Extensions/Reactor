@@ -1,5 +1,5 @@
 image: Visual Studio 2017
 
 build_script:
-  - ps dotnet build
-  - ps dotnet test
+  - ps: dotnet build
+  - ps: dotnet test
