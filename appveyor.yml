@@ -2,4 +2,5 @@ image: Visual Studio 2017
 
 build_script:
   - ps: dotnet build
-  - ps: dotnet test
+  - ps: dotnet test Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests\Microsoft.Reactive.Bcl.Linq.Expressions.CompilerServices.Tests.csproj
+  - ps: dotnet test Microsoft.Reactive.Bcl.Memory.Pooling.Tests\Microsoft.Reactive.Bcl.Memory.Pooling.Tests.csproj
